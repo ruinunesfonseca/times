@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex 2_copy</title>
+  <style>
+    body {
+      height: 2000px;
+      padding-top: 60px;
+      padding-left: 120px;
+    }
+
+    .flex-container-horizontal {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 50px;
+      background-color: lightgray;
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 2px;
+      align-items: center;
+      z-index: 400;
+    }
+
+    .left-section {
+      display: flex;          
+      padding: 5px 0px;
+      margin: 2px; 
+      width: 150px;      
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+          
+    }
+
+    .middle-section {
+      display: flex;       
+      padding: 5px 0px;
+      margin: 2px;  
+      flex: 1;
+      max-width: 450px;  
+      min-width: 300px;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0px 70px; 
+    }
+
+    .right-section {
+      display: flex;
+      
+      padding: 5px 10px;
+      margin: 2px; 
+      width: 200px;        
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+
+    .flex-container-vertical {
+      display: flex;     
+      flex-direction: column;
+      position: fixed;
+      left: 0px;
+      top: 60px;
+      bottom: 0px;
+      width: 100px;      
+      align-items: center;
+    }
+
+    .botao {
+      height: 90px;
+      width: 90px;
+      margin: 5px;
+      border: none;       
+      cursor: pointer;     
+      padding: 0;
+    }    
+
+    .icon-test {
+      width: 30px;
+    }
+
+    .busca {
+      flex: 1;
+      width: 0;
+      max-width: 300px;
+    }
+   
+
+    .icon {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;      
+    }
+    
+
+    @media (max-width: 1000px) {
+      .grid{
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 1500px) {
+
+      body {
+        padding-left: 200px;
+      }
+      .flex-container-vertical {
+        width: 200px; 
+        align-items: center;     
+      }
+    }
+
+    .grid {
+      z-index: 300;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+      row-gap: 10px;
+      column-gap: 10px;      
+    }
+
+    .container-imagem-escudos {
+      position: relative;
+    }
+
+    .container-imagem-escudos:hover .tooltip {
+      opacity: 1;
+    }
+
+    .container-imagem-escudos:hover .tooltip6 {
+      opacity: 1;
+    }
+
+
+    
+    .imagem-escudos {
+      width: 100%;
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+    }
+
+    .tooltip {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      background-color: white;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 390px;
+      padding: 10px;
+    }
+    .tooltip6 {
+      position: absolute;
+      right: 0;
+      opacity: 0;
+      pointer-events: none;
+      background-color: white;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 390px;
+      padding: 10px;
+    }
+
+    .jogador {
+      width: 100px;
+      height: 100px;
+      border-radius: 50px; 
+      margin-right: 10px; 
+      margin-left: 10px; 
+    }
+
+    .nome {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 2px;   
+    }
+
+    .descricao {
+      margin-top: 2px;
+    }
+
+    .clube-jogador {
+      width: 100px;
+      height: 100px;  
+    }  
+
+  </style>
+
+</head> 
+<body>
+
+<div class="flex-container-horizontal">
+  <section class="left-section">
+    <img class="icon-test" src="/icons/explore.svg">
+    <img class="icon-test" src="/icons/hamburger-menu.svg">
+    <img class="icon-test" src="/icons/home.svg">
+  </section>
+  <section class="middle-section">
+    <input class="busca" type="text" placeholder="digite">
+    <img class="icon-test" src="/icons/library.svg">
+    <img class="icon-test" src="/icons/notifications.svg">
+    <img class="icon-test" src="/icons/originals.svg">
+  </section>
+  <section class="right-section">
+    <img class="icon-test" src="/icons/search.svg">
+    <img class="icon-test" src="/icons/subscriptions.svg">
+    <img class="icon-test" src="/icons/upload.svg">
+  </section>
+</div>
+
+<div class="flex-container-vertical">
+  <button class="botao"><a href="https://www.fferj.com.br/" target="_blank"><img class="icon" src="/campeonatos/Carioca.png"></button>
+  <button class="botao"><a href="https://brasileirao.cbf.com.br/" target="_blank"><img class="icon" src="/campeonatos/Brasileirão.png"></a></button>
+  <button class="botao"><a href="https://www.cbf.com.br/futebol-brasileiro/competicoes/copa-brasil-masculino/2023?phase=1696" target="_blank"><img class="icon" src="/campeonatos/Copa do Brasil.png"></a></button>
+  <button class="botao"><a href="https://www.conmebol.com/pt-br/" target="_blank"><img class="icon" src="/campeonatos/Sulamericana.png"></a></button>
+  <button class="botao"><a href="https://www.conmebol.com/pt-br/conmebol-libertadores/" target="_blank"><img class="icon" src="/campeonatos/Libertadores.jpg"></a></button>
+  <button class="botao"><a href="https://www.fifa.com/es/tournaments/mens/clubworldcup" target="_blank"><img class="icon" src="/campeonatos/Mundial de clubes.png"></a></button>
+</div>
+
+<div class="grid"> 
+  <div class="container-imagem-escudos">
+    <a href="https://www.flamengo.com.br/" target="_blank">
+      <img class="imagem-escudos" src="Escudos/Flamengo.png">
+    </a>        
+    <div class="tooltip">
+      <img class="jogador" src="channel-pictures/channel-1.jpeg">
+      <div>
+        <div class="nome">Zico</div>
+        <div class="descricao">O melhor jogador da história do Flamengo!</div>
+      </div>
+      <img class="clube-jogador" src="Escudos/Flamengo.png">
+    </div>
+  </div > 
+
+  <div class="container-imagem-escudos">
+    <a href="https://vasco.com.br/" target="_blank">
+      <img class="imagem-escudos" src="Escudos/Vasco.png">
+    </a>    
+    <div class="tooltip">
+      <img class="jogador" src="channel-pictures/channel-2.jpeg">
+      <div>
+        <div class="nome">Roberto Dinamite</div>
+        <div class="descricao">O melhor jogador da história do Vasco!</div>
+      </div>
+      <img class="clube-jogador" src="Escudos/Vasco.png">
+    </div>     
+  </div> 
+
+  <div class="container-imagem-escudos">
+    <a href="https://www.fluminense.com.br/" target="">
+      <img class="imagem-escudos" src="Escudos/Fluminense.png"> 
+    </a>    
+    <div class="tooltip">
+      <img class="jogador" src="channel-pictures/channel-3.jpeg">
+      <div>
+        <div class="nome">Rivelino</div>
+        <div class="descricao">O melhor jogador da história do Fluminense!</div>
+      </div>
+      <img class="clube-jogador" src="Escudos/Fluminense.png">
+    </div>   
+  </div> 
+
+  <div class="container-imagem-escudos">
+    <a href="https://www.botafogo.com.br/" target="_blank">
+      <img class="imagem-escudos" src="Escudos/Botafogo.png">
+    </a>    
+    <div class="tooltip6">
+      <img class="jogador" src="channel-pictures/channel-4.jpeg">
+      <div>
+        <div class="nome">Garrincha</div>
+        <div class="descricao">O melhor jogador da história do Botafogo!</div>
+      </div>
+      <img class="clube-jogador" src="Escudos/Botafogo.png">
+    </div>     
+  </div> 
+
+  <div class="container-imagem-escudos">
+    <a href="http://www.americario.com.br/" target="_blank">
+      <img class="imagem-escudos" src="Escudos/America.png">
+    </a>    
+    <div class="tooltip6">
+      <img class="jogador" src="channel-pictures/channel-5.jpeg">
+      <div>
+        <div class="nome">Eduardo Antunes</div>
+        <div class="descricao">O melhor jogador da história do America!</div>
+      </div>
+      <img class="clube-jogador" src="Escudos/America.png">
+    </div>    
+  </div> 
+
+  <div class="container-imagem-escudos">
+    <a href="http://www.madureiraec.com.br/" target="_blank">
+      <img class="imagem-escudos" src="Escudos/Madureira.png">
+    </a>    
+    <div class="tooltip6">
+      <img class="jogador" src="channel-pictures/channel-6.jpeg">
+      <div>
+        <div class="nome">Elder Granja</div>
+        <div class="descricao">O melhor jogador da história do Madureira!</div>
+      </div>
+      <img class="clube-jogador" src="Escudos/Madureira.png">
+    </div> 
+   </div> 
+  
+</div>
+
+
+</body>
+</html>
